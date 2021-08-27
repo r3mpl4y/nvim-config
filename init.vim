@@ -17,13 +17,6 @@ set guioptions-=L
 
 let mapleader= " "
 
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
-
-vnoremap < <gv
-vnoremap > >gv
-
-
 call plug#begin('~/.vim/plugged')
 
 " Temas
@@ -48,6 +41,22 @@ Plug 'alvan/vim-closetag'
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Tpope
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+
+" Vim Airline
+Plug 'vim-airline/vim-airline'
+
+" Emmet
+Plug 'mattn/emmet-vim'
+
+" Syntastic
+Plug 'scrooloose/syntastic'
+
+" Go plugins
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -89,6 +98,16 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 let g:deoplete#enable_at_startup = 1
 let g:jsx_ext_required = 0
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " Close tags
