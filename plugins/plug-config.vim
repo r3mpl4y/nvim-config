@@ -68,5 +68,11 @@ let NERDTreeMapOpenInTab='\t'
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
 
+" live server
+let g:bracey_browser_command = 0
+let g:bracey_auto_start_browser = 1
+let g:bracey_refresh_on_save = 1
+let g:bracey_auto_start_server = 1
+
 
 source $HOME\AppData\Local\nvim\plugins\coc-config.vim
