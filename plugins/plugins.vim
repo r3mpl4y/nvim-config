@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-
 " syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -15,17 +14,23 @@ Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " Tree
-Plug 'preservim/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " typing
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 
 " tmux
+Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
 " autocomplete
+Plug 'sirver/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" test
+Plug 'tyewang/vimux-jest-test'
+Plug 'janko-m/vim-test'
 
 " IDE
 Plug 'editorconfig/editorconfig-vim'
@@ -41,9 +46,5 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-repeat'
-
-" Syntastic
-Plug 'scrooloose/syntastic'
-
 
 call plug#end()
