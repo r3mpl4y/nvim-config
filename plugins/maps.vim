@@ -16,6 +16,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>W :wq<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
+
 " shorter commands
 cnoreabbrev tree NERDTreeToggle
 cnoreabbrev blame Gblame
@@ -39,10 +40,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Remap surround to lowercase s so it does not add an empty space
-xmap s <Plug>VSurround
 " diagnostics
-nnoremap <leader>P :let @*=expand("%")<CR>
+nnoremap <leader>kp :let @*=expand("%")<CR>
 
 " tabs navigation
 map <Leader>h :tabprevious<cr>
@@ -50,17 +49,6 @@ map <Leader>l :tabnext<cr>
 
 " buffers
 map <Leader>ob :Buffers<cr>
-
-" keeping it centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-
-" Moving text
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-nnoremap <Leader>k :m .-2<CR>==
-nnoremap <Leader>j :m .+1<CR>==
 
 " faster scrolling
 nnoremap <C-j> 10<C-e>
@@ -76,11 +64,11 @@ nnoremap <Leader>gl :Gpull<cr>
 nnoremap <Leader>x :!node %<cr>
 
 " Use <c-space> to trigger completion.
-"if &filetype == "javascript" || &filetype == "python"
-  "inoremap <c-space> <C-x><C-u>
-"else
+if &filetype == "javascript" || &filetype == "python"
+  inoremap <c-space> <C-x><C-u>
+else
   inoremap <silent><expr> <c-space> coc#refresh()
-"endif
+endif
 
 
 set splitright
