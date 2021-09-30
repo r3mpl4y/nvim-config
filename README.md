@@ -1,2 +1,2 @@
 # nvim-config windows
-My NeoVim configuration.
+My NeoVim configuration for Windows.
