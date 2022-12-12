@@ -12,14 +12,18 @@ set termguicolors
 set sw=2
 set relativenumber
 
+so $HOME/AppData/Local/nvim/config/plugins.vim
+so $HOME/AppData/Local/nvim/config/plugin-config.vim
+so $HOME/AppData/Local/nvim/config/maps.vim
+
 set laststatus=2
 set noshowmode
 
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+au BufNewFile,BufRead *.html set filetype=htmldjango
+lua require'colorizer'.setup()
 
-source $HOME/AppData/Local/nvim/plugins/plugins.vim
-source $HOME/AppData/Local/nvim/plugins/plugin-config.vim
-source $HOME/AppData/Local/nvim/plugins/maps.vim
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
